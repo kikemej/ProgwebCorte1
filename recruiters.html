@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bolsa de Empleo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Bolsa de Empleo</h1>
+            <nav>
+                <ul>
+                    <li><a href="./index.html">Inicio</a></li>
+                    <li><a href="./services.html">Servicios</a></li>
+                    <li><a href="./login.html">Login</a></li>
+                    <li><a href="./register.html">Registro</a></li>
+                    <li><a href="#terminos">Términos y Condiciones</a></li>
+                    <li><a href="#privacidad">Políticas de Privacidad</a></li>
+                    <li><a href="#contacto">Contáctanos</a></li>
+                    <li><a href="#nosotros">Quiénes Somos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section-init">
+        <h2>Reclutadores</h2>
+        <div class="w-100">
+            <div class="w-50">
+                <section class="section">
+                    <div class="container">
+                        <ul class="cursor">
+                            <li onclick="mostrar(1)">Publicar Oferta</li>
+                            <li onclick="mostrar(2)">Revisar Aplicaciones</li>
+                            <li onclick="mostrar(3)">Cerrar Ofertas</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+            <div class="w-50">
+                <section class="section">
+                    <div class="container">
+                        <div class="mostrar" id="1">
+                            <form action="procesar_hoja_de_vida.php" method="post">
+                                <label for="titulo">Titulo:</label>
+                                <input type="text" id="titulo" name="titulo" required>
+
+                                <label for="descripcion">Descripción:</label>
+                                <input type="text" id="descripcion" name="descripcion" required>
+
+                                <label for="salario">Salario:</label>
+                                <input type="text" id="salario" name="salario" required>
+
+                                <input type="submit" value="Guardar">
+                              </form>
+                        </div>
+                        <div class="mostrar" id="2">
+                            <table>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Titulo</th>
+                                    <th>Hoja de vida</th>
+                                    <th>Reclutar</th>
+                                </tr>
+                                <tr>
+                                    <td>Jhon</td>
+                                    <td>Desarrollador</td>
+                                    <td><button>ver</button></td>
+                                    <td><button>ir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Sebastian</td>
+                                    <td>Desarrollador</td>
+                                    <td><button>ver</button></td>
+                                    <td><button>ir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Henry</td>
+                                    <td>Desarrollador</td>
+                                    <td><button>ver</button></td>
+                                    <td><button>ir</button></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="mostrar" id="3">
+                            <table>
+                                <tr>
+                                    <th>Titulo</th>
+                                    <th>Descripción</th>
+                                    <th>Cerrar</th>
+                                </tr>
+                                <tr>
+                                    <td>Desarrollador</td>
+                                    <td>Prueba</td>
+                                    <td><button>ir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Contador</td>
+                                    <td>Prueba</td>
+                                    <td><button>ir</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Asistente</td>
+                                    <td>Prueba</td>
+                                    <td><button>ir</button></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Bolsa de Empleo</p>
+        </div>
+    </footer>
+    <script>
+        function mostrar(id) {
+            for (let el of document.querySelectorAll('.mostrar')) el.style.display = 'none';
+            document.getElementById(id).style.display = 'block'
+        }
+        mostrar(1)
+        console.log('a');
+    </script>
+</body>
+</html>
